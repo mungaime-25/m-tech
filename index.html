@@ -1,19 +1,19 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>M-tech | Home</title>
-  <link rel="stylesheet" href="style.css" />
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Home | M-tech</title>
+  <link rel="stylesheet" href="style.css">
   <style>
     body {
-      margin: 0;
-      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
       background-image: url('assets/bg-circuit.png');
       background-size: cover;
       background-position: center;
       background-repeat: no-repeat;
       background-attachment: fixed;
+      margin: 0;
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
       color: #fff;
     }
 
@@ -49,30 +49,30 @@
       color: #fff;
     }
 
-    .hero {
-      padding: 100px 20px;
+    .hero-section {
+      padding: 80px 20px;
       text-align: center;
-      background: rgba(0, 0, 0, 0.6);
-      margin: 50px;
-      border-radius: 20px;
-      animation: fadeUp 1.5s ease;
+      background: rgba(0, 0, 0, 0.85);
+      margin: 40px;
+      border-radius: 15px;
+      box-shadow: 0 0 30px rgba(0, 255, 255, 0.3);
     }
 
-    .hero h1 {
+    .hero-section h1 {
       font-size: 3rem;
-      margin-bottom: 20px;
       color: #00f2ff;
+      margin-bottom: 20px;
       text-shadow: 1px 1px 5px #000;
     }
 
-    .hero p {
+    .hero-section p {
       font-size: 1.3rem;
       line-height: 1.6;
+      color: #fff;
       max-width: 800px;
-      margin: 0 auto;
+      margin: auto;
       background: rgba(0, 255, 255, 0.1);
       padding: 20px;
-      border-left: 6px solid #00f2ff;
       border-radius: 8px;
       box-shadow: 0 0 15px rgba(0, 255, 255, 0.2);
     }
@@ -85,21 +85,55 @@
       font-size: 0.9rem;
     }
 
-    @keyframes fadeUp {
-      0% {
-        transform: translateY(40px);
-        opacity: 0;
-      }
-      100% {
-        transform: translateY(0px);
-        opacity: 1;
-      }
+    /* Chatbot Styles */
+    #chatbot-container {
+      position: fixed;
+      bottom: 20px;
+      right: 20px;
+      width: 300px;
+      font-family: 'Segoe UI', sans-serif;
+      z-index: 1000;
+    }
+
+    #chat-header {
+      background: #00e0ff;
+      color: #000;
+      padding: 10px;
+      border-radius: 10px 10px 0 0;
+      font-weight: bold;
+      cursor: pointer;
+      text-align: center;
+    }
+
+    #chat-box {
+      display: none;
+      background: #ffffffcc;
+      height: 400px;
+      border-radius: 0 0 10px 10px;
+      box-shadow: 0 4px 12px rgba(0,0,0,0.5);
+      overflow: hidden;
+      flex-direction: column;
+    }
+
+    #chat-messages {
+      padding: 10px;
+      height: 340px;
+      overflow-y: auto;
+      color: #000;
+    }
+
+    #user-input {
+      width: 100%;
+      padding: 10px;
+      border: none;
+      outline: none;
+      font-size: 1rem;
     }
   </style>
 </head>
 <body>
   <header>
-    <a href="index.html"><img src="assets/png.png" alt="M-tech Logo" class="logo" /></a>
+    <a href="index.html"><img src="assets/png.png" alt="M-tech Logo" class="logo"></a>
     <nav>
       <ul>
         <li><a href="index.html">Home</a></li>
@@ -110,15 +144,56 @@
     </nav>
   </header>
 
-  <section class="hero">
+  <section class="hero-section">
     <h1>Welcome to M-tech</h1>
-    <p>
-      M-tech empowers businesses to leverage artificial intelligence, intelligent chatbots, data analysis, and machine learning models to transform their operations. From AI-powered apps to actionable insights, we help you stay ahead in the digital era.
-    </p>
+    <p>M-tech leverages Artificial Intelligence and Machine Learning to deliver powerful, data-driven insights and custom intelligent systems. Whether you're just starting with data or building advanced AI pipelines, M-tech is here to guide and empower your business journey.</p>
   </section>
+
+  <div id="chatbot-container">
+    <div id="chat-header" onclick="toggleChat()">💬 Ask M-tech</div>
+    <div id="chat-box">
+      <div id="chat-messages"></div>
+      <input type="text" id="user-input" placeholder="Type your question..." onkeypress="handleKey(event)" />
+    </div>
+  </div>
 
   <footer>
     <p>&copy; 2025 M-tech. All rights reserved.</p>
   </footer>
+
+  <script>
+    function toggleChat() {
+      const chatBox = document.getElementById('chat-box');
+      chatBox.style.display = (chatBox.style.display === 'flex') ? 'none' : 'flex';
+    }
+
+    function handleKey(event) {
+      if (event.key === 'Enter') {
+        const input = document.getElementById('user-input');
+        const message = input.value.trim();
+        if (message !== '') {
+          addMessage('You', message);
+          addMessage('M-tech AI', getBotResponse(message));
+          input.value = '';
+        }
+      }
+    }
+
+    function addMessage(sender, text) {
+      const chat = document.getElementById('chat-messages');
+      const msg = document.createElement('p');
+      msg.innerHTML = `<strong>${sender}:</strong> ${text}`;
+      chat.appendChild(msg);
+      chat.scrollTop = chat.scrollHeight;
+    }
+
+    function getBotResponse(input) {
+      input = input.toLowerCase();
+      if (input.includes("ai")) return "We build custom AI models for automation.";
+      if (input.includes("data")) return "We analyze your data and extract insights.";
+      if (input.includes("ml") || input.includes("machine learning")) return "Our ML systems can predict trends and help in decision-making.";
+      return "Thanks for reaching out. We'll get back to you shortly.";
+    }
+  </script>
 </body>
 </html>
