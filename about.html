@@ -1,30 +1,122 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>About - M-tech</title>
-  <link rel="stylesheet" href="css/style.css" />
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>About | M-tech</title>
+  <link rel="stylesheet" href="style.css">
+  <style>
+    body {
+      background-image: url('assets/bg-circuit.png');
+      background-size: cover;
+      background-position: center;
+      background-repeat: no-repeat;
+      background-attachment: fixed;
+      margin: 0;
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      color: #fff;
+    }
+
+    header {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 10px 20px;
+      background: linear-gradient(90deg, #0f2027, #203a43, #2c5364);
+      box-shadow: 0 4px 10px rgba(0, 0, 0, 0.4);
+    }
+
+    .logo {
+      height: 60px;
+      width: auto;
+    }
+
+    nav ul {
+      list-style: none;
+      display: flex;
+      gap: 20px;
+    }
+
+    nav ul li a {
+      color: #00e0ff;
+      text-decoration: none;
+      font-weight: bold;
+      font-size: 1rem;
+      transition: color 0.3s ease;
+    }
+
+    nav ul li a:hover {
+      color: #fff;
+    }
+
+    .about-section {
+      padding: 60px 30px;
+      background: rgba(0, 0, 0, 0.85);
+      margin: 40px;
+      border-radius: 15px;
+      box-shadow: 0 0 30px rgba(0, 255, 255, 0.3);
+    }
+
+    .about-section h1 {
+      text-align: center;
+      font-size: 3rem;
+      color: #00f2ff;
+      margin-bottom: 30px;
+      text-shadow: 1px 1px 5px #000;
+    }
+
+    .about-section p, .about-section ul {
+      max-width: 1000px;
+      margin: auto;
+      font-size: 1.2rem;
+      line-height: 1.8;
+      background: rgba(0, 255, 255, 0.1);
+      padding: 20px;
+      border-left: 6px solid #00f2ff;
+      border-radius: 8px;
+      box-shadow: 0 0 15px rgba(0, 255, 255, 0.2);
+      margin-bottom: 20px;
+    }
+
+    .about-section ul li {
+      margin-bottom: 10px;
+    }
+
+    footer {
+      text-align: center;
+      padding: 20px;
+      background: #000000cc;
+      color: #00e0ff;
+      font-size: 0.9rem;
+    }
+  </style>
 </head>
 <body>
   <header>
-    <div class="navbar">
-      <a href="index.html" class="brand">
-        <img src="assets/png.png" alt="M-tech Logo" class="logo" />
-        <span class="brand-text">M-tech</span>
-      </a>
-      <nav>
-        <a href="index.html">Home</a>
-        <a href="about.html">About</a>
-        <a href="services.html">Services</a>
-        <a href="contact.html">Contact</a>
-      </nav>
-    </div>
+    <a href="index.html"><img src="assets/png.png" alt="M-tech Logo" class="logo"></a>
+    <nav>
+      <ul>
+        <li><a href="index.html">Home</a></li>
+        <li><a href="about.html">About</a></li>
+        <li><a href="services.html">Services</a></li>
+        <li><a href="contact.html">Contact</a></li>
+      </ul>
+    </nav>
   </header>
 
-  <section class="hero">
+  <section class="about-section">
     <h1>About M-tech</h1>
-    <p>M-tech is a leading AI and data solutions company that builds AI agents, chatbots, machine learning models, and data analysis systems for enterprises and businesses.</p>
+    <p>M-tech is an innovative tech company that specializes in developing cutting-edge AI and data solutions. We are passionate about transforming businesses through the power of artificial intelligence and data analytics.</p>
+
+    <ul>
+      <li><strong>Our Mission:</strong> To empower companies with smart AI tools and insightful data systems that drive growth, automation, and innovation.</li>
+      <li><strong>Our Vision:</strong> To be a leading AI and data solutions company in Africa and the world, enabling smarter business decisions and intelligent applications.</li>
+      <li><strong>Our Core Values:</strong> Innovation, Integrity, Excellence, Collaboration, Customer Focus</li>
+    </ul>
   </section>
+
+  <footer>
+    <p>&copy; 2025 M-tech. All rights reserved.</p>
+  </footer>
 </body>
 </html>

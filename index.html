@@ -2,30 +2,123 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>M-tech - AI & Data Solutions</title>
-  <link rel="stylesheet" href="css/style.css" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>M-tech | Home</title>
+  <link rel="stylesheet" href="style.css" />
+  <style>
+    body {
+      margin: 0;
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      background-image: url('assets/bg-circuit.png');
+      background-size: cover;
+      background-position: center;
+      background-repeat: no-repeat;
+      background-attachment: fixed;
+      color: #fff;
+    }
+
+    header {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 10px 20px;
+      background: linear-gradient(90deg, #0f2027, #203a43, #2c5364);
+      box-shadow: 0 4px 10px rgba(0, 0, 0, 0.4);
+    }
+
+    .logo {
+      height: 60px;
+      width: auto;
+    }
+
+    nav ul {
+      list-style: none;
+      display: flex;
+      gap: 20px;
+    }
+
+    nav ul li a {
+      color: #00e0ff;
+      text-decoration: none;
+      font-weight: bold;
+      font-size: 1rem;
+      transition: color 0.3s ease;
+    }
+
+    nav ul li a:hover {
+      color: #fff;
+    }
+
+    .hero {
+      padding: 100px 20px;
+      text-align: center;
+      background: rgba(0, 0, 0, 0.6);
+      margin: 50px;
+      border-radius: 20px;
+      animation: fadeUp 1.5s ease;
+    }
+
+    .hero h1 {
+      font-size: 3rem;
+      margin-bottom: 20px;
+      color: #00f2ff;
+      text-shadow: 1px 1px 5px #000;
+    }
+
+    .hero p {
+      font-size: 1.3rem;
+      line-height: 1.6;
+      max-width: 800px;
+      margin: 0 auto;
+      background: rgba(0, 255, 255, 0.1);
+      padding: 20px;
+      border-left: 6px solid #00f2ff;
+      border-radius: 8px;
+      box-shadow: 0 0 15px rgba(0, 255, 255, 0.2);
+    }
+
+    footer {
+      text-align: center;
+      padding: 20px;
+      background: #000000cc;
+      color: #00e0ff;
+      font-size: 0.9rem;
+    }
+
+    @keyframes fadeUp {
+      0% {
+        transform: translateY(40px);
+        opacity: 0;
+      }
+      100% {
+        transform: translateY(0px);
+        opacity: 1;
+      }
+    }
+  </style>
 </head>
 <body>
   <header>
-    <div class="navbar">
-      <a href="index.html" class="brand">
-        <img src="assets/png.png" alt="M-tech Logo" class="logo" />
-        <span class="brand-text">M-tech</span>
-      </a>
-      <nav>
-        <a href="index.html">Home</a>
-        <a href="about.html">About</a>
-        <a href="services.html">Services</a>
-        <a href="contact.html">Contact</a>
-      </nav>
-    </div>
+    <a href="index.html"><img src="assets/png.png" alt="M-tech Logo" class="logo" /></a>
+    <nav>
+      <ul>
+        <li><a href="index.html">Home</a></li>
+        <li><a href="about.html">About</a></li>
+        <li><a href="services.html">Services</a></li>
+        <li><a href="contact.html">Contact</a></li>
+      </ul>
+    </nav>
   </header>
 
   <section class="hero">
     <h1>Welcome to M-tech</h1>
-    <p>Building smart AI agents, chatbots, and machine learning models for businesses.</p>
-    <a href="contact.html" class="btn">Contact Us</a>
+    <p>
+      M-tech empowers businesses to leverage artificial intelligence, intelligent chatbots, data analysis, and machine learning models to transform their operations. From AI-powered apps to actionable insights, we help you stay ahead in the digital era.
+    </p>
   </section>
+
+  <footer>
+    <p>&copy; 2025 M-tech. All rights reserved.</p>
+  </footer>
 </body>
 </html>
